@@ -12,7 +12,7 @@
   --light-cl: #ffffff;
   /* others */
   --indent: 24px;
-  --items: 4;
+  --items: 3;
 }
 
 body {
@@ -85,7 +85,6 @@ button {
 .hero-btn:focus,
 .hero-btn:hover {
   background-color: var(--ocean-cl);
-  cursor: pointer;
 }
 .portfolio-btn {
   color: var(--irirs-cl);
@@ -98,10 +97,11 @@ button {
 .portfolio-btn:focus {
   color: var(--light-cl);
   background-color: var(--ocean-cl);
-  cursor: pointer;
+  border: 1px solid var(--cornflower-cl);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
+  border: 1px solid var(--ocean-cl);
 }
 /* Container */
 .container {
@@ -115,10 +115,11 @@ button {
 .card-set {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--indent);
+  row-gap: calc(2 * var(--indent));
+  column-gap: var(--indent);
 }
 .card-set-item {
-  width: calc(100% - var(--indent) * (var(--items) - 1) / var(--items));
+  flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
 }
 /* Header */
 .header {
@@ -197,15 +198,18 @@ button {
   padding-bottom: 120px;
 }
 .main-list {
+  display: flex;
+  gap: 24px;
 }
 .main-item {
-  width: 264px;
+  flex-basis: 264px;
 }
 .main-item-title {
   font-weight: 500;
   font-size: 20px;
   line-height: calc(24 / 20);
   letter-spacing: 0.02em;
+  margin-bottom: 8px;
 }
 .main-item-txt {
   font-size: 16px;
@@ -218,9 +222,7 @@ button {
   padding-bottom: 120px;
 }
 .products-title {
-  width: 324px;
-  margin-right: auto;
-  margin-left: auto;
+  text-align: center;
   margin-bottom: 72px;
 }
 
@@ -253,7 +255,6 @@ button {
 .team-item {
   background-color: var(--light-cl);
   text-align: center;
-  padding: 0px 0px 32px;
 
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -264,7 +265,6 @@ button {
   font-size: 20px;
   line-height: calc(24 / 20);
   letter-spacing: 0.02em;
-  margin-top: 32px;
   margin-bottom: 8px;
 }
 .team-item-txt {
@@ -272,6 +272,9 @@ button {
   line-height: calc(24 / 16);
   letter-spacing: 0.02em;
   color: var(--slate-cl);
+}
+.team-card-desc {
+  padding: 32px 16px;
 }
 
 /* Footer */
@@ -311,7 +314,7 @@ button {
   padding-top: 96px;
   padding-bottom: 120px;
 }
-/* nawigation button */
+/* Navigation button */
 .button-list {
   display: flex;
   gap: 24px;
@@ -320,18 +323,14 @@ button {
 }
 /* Project card section */
 .project-card-list {
-  --items: 3;
 }
 .project-card-item {
-  width: 360px;
-  padding-bottom: 32px;
 }
 .project-card-title {
   font-weight: 500;
   font-size: 20px;
   line-height: calc(24 / 20);
   letter-spacing: 0.02em;
-
   margin-bottom: 8px;
 }
 .project-card-txt {
