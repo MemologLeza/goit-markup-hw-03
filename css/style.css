@@ -121,6 +121,10 @@ button {
 .card-set-item {
   flex-basis: calc((100% - var(--indent) * (var(--items) - 1)) / var(--items));
 }
+/* Text-set */
+.text-set {
+  display: flex;
+}
 /* Header */
 .header {
   border-bottom: 1px solid var(--cornflower-cl);
@@ -199,10 +203,11 @@ button {
 }
 .main-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 24px;
 }
 .main-item {
-  flex-basis: 264px;
+  flex-basis: calc((100% - var(--indent) * var(--items)) / (var(--items) + 1));
 }
 .main-item-title {
   font-weight: 500;
@@ -274,7 +279,8 @@ button {
   color: var(--slate-cl);
 }
 .team-card-desc {
-  padding: 32px 16px;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 /* Footer */
