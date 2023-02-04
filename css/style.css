@@ -204,7 +204,7 @@ button {
 .main-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  gap: var(--indent);
 }
 .main-item {
   flex-basis: calc((100% - var(--indent) * var(--items)) / (var(--items) + 1));
